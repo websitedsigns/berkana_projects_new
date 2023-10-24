@@ -164,8 +164,7 @@ button {
 button:hover {
     background-color: #555; /* Button background color on hover */
 }
-/* Styles for the contact section */
-/* Styles for the contact section */
+
 /* Styles for the contact section */
 .contact {
     background-color: #F0F0F0;
@@ -175,6 +174,7 @@ button:hover {
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     box-shadow: 10px 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 /* Remove bullet points for lists in the contact section */
