@@ -189,7 +189,7 @@ button:hover {
 
 
 /* Media Query for wider screens */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     .contact {
         max-width: fit-content;
         background-color: #faf3f3;
