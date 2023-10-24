@@ -177,10 +177,16 @@ button:hover {
     text-align: center;
 }
 
+.contact p {
+    text-decoration: none; /* Remove underline */
+    color: your-desired-color; /* Change the color to your desired color */
+}  
+
 /* Remove bullet points for lists in the contact section */
 .contact ul {
     list-style-type: none;
 }
+
 
 /* Media Query for wider screens */
 @media screen and (max-width: 768px) {
@@ -217,15 +223,11 @@ button:hover {
         margin-right: 10px;
     }
 
-    .referral {
-        background-color: #F0F0F0;
-    width: 100%;
-    padding: 40px;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.2);
+    .cta-button {
+        background-color: lightgray;
+        outline-color: #222;
     }
+   
 }
 
 
