@@ -1,7 +1,5 @@
-// Declare variables at the top level
 let slideIndex = 0;
 
-// Add smooth scrolling to anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -16,12 +14,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// JavaScript for mobile menu (burger menu)
-const burgerMenu = document.querySelector('.burger-menu');
-const navMenu = document.querySelector('.nav-menu ul');
-burgerMenu.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
-});
 
 function showImage(imageIndex) {
     slideIndex = imageIndex;
@@ -30,8 +22,8 @@ function showImage(imageIndex) {
 
     modalImage.src = clickedImage.src;
 
-    // Set the image size to make it smaller
-    modalImage.style.width = '50%'; // Adjust the size as needed
+    
+    modalImage.style.width = '50%';
     modalImage.style.height = 'auto';
 
     document.getElementById('imageModal').style.display = 'block';
@@ -41,26 +33,36 @@ function closeModal() {
     document.getElementById('imageModal').style.display = 'none';
 }
 
+function enlargeImage(image) {
+    var modal = document.getElementById('imageModal');
+    var modalImage = document.getElementById('modalImage');
+
+    modal.style.display = 'block';
+    modalImage.src = image.src;
+}
+
+function closeImageModal() {
+    var modal = document.getElementById('imageModal');
+    modal.style.display = 'none';
+}
 
 
 $(document).ready(function() {
     $('.carousel-container .carousel').slick({
         infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToShow: 8,
+        slidesToScroll: 8,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 768, 
                 settings: {
-                    slidesToShow: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1
+                    slidesToShow: 2, 
+                    slidesToScroll: 2, 
                 }
             }
+
+            
         ]
     });
 });
+
