@@ -16,35 +16,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 function showImage(imageIndex) {
-    slideIndex = imageIndex;
-    const modalImage = document.getElementById('modalImage');
-    const clickedImage = document.querySelectorAll('.carousel-item img')[imageIndex];
-
-    modalImage.src = clickedImage.src;
-
-    
-    modalImage.style.width = '50%';
-    modalImage.style.height = 'auto';
-
-    document.getElementById('imageModal').style.display = 'block';
+    var i;
+    var images = document.getElementsByClassName('image');
+    var dots = document.getElementsByClassName('dot');
+    for (i = 0; i < images.length; i++) {
+        images[i].style.display = 'none';
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace('active', '');
+    }
+    images[imageIndex - 1].style.display = 'block';
+    dots[imageIndex - 1].className += ' active';
 }
-
-function closeModal() {
-    document.getElementById('imageModal').style.display = 'none';
-}
-
-function enlargeImage(image) {
-    var modal = document.getElementById('imageModal');
-    var modalImage = document.getElementById('modalImage');
-
-    modal.style.display = 'block';
-    modalImage.src = image.src;
-}
-
-function closeImageModal() {
-    var modal = document.getElementById('imageModal');
+//create modal for gallery images
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modal-img');
+const caption = document.getElementById('caption');
+const close = document.getElementById('close');
+const images = document.querySelectorAll('.image');
+images.forEach(image => {
+    image.addEventListener('click', () => {
+        modal.style.display = 'block';
+        modalImg.src = image.src;
+        caption.innerHTML = image.alt;
+    });
+});
+close.addEventListener('click', () => {
     modal.style.display = 'none';
-}
+});
 
 
 $(document).ready(function() {
